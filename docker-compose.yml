@@ -1,0 +1,19 @@
+version: "3.4"
+services:
+  frontend:
+    container_name: my-app-frontend
+    restart: always
+    build:
+      context: ./
+      dockerfile: my-app/frontend/Dockerfile
+    labels:
+      "com.calponia.egress.fqdns.0.pattern": '*'
+      "com.calponia.networking.0.host": "backend"
+      "com.calponia.networking.0.match.0.uri.prefix": "/api/"
+      "com.calponia.networking.0.rewrite.uri": "/"
+      "com.calponia.networking.0.port": 3001
+      "com.calponia.networking.1.port": 80
+    ports:
+      - "80:80"
+
+

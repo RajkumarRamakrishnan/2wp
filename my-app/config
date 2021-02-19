@@ -1,0 +1,6 @@
+Host git.calponia.com
+  Port 2358
+  IdentityFile ./my-app/.ssh/calponia.com-71c1708d-418f-4144-a4b4-ad12ebcc4759
+  User git
+  StrictHostKeyChecking no
+  UserKnownHostsFile=/dev/null
